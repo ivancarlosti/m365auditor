@@ -65,24 +65,24 @@ if (-not (Test-Path $outputDirectory)) {
     New-Item -ItemType Directory -Path $outputDirectory
 }
 
-# Export Users with License Information
+# Export Users with account status and licenses
 Write-Host
 Write-Host "Exporting users..."
 $users = Get-AzureADUser -All $true
-$userLicenses = @()
 
-foreach ($user in $users) {
-    $licenses = (Get-AzureADUserLicenseDetail -ObjectId $user.ObjectId).SkuPartNumber -join ", "
-    $userLicenses += [PSCustomObject]@{
-        ObjectId          = $user.ObjectId
-        DisplayName       = $user.DisplayName
-        UserPrincipalName = $user.UserPrincipalName
-        Mail              = $user.Mail
-        Licenses          = $licenses
+$usersArray = $users | ForEach-Object {
+    $licenses = ($_ | Get-AzureADUserLicenseDetail).SkuPartNumber -join ", "
+    [PSCustomObject]@{
+        ObjectId        = $_.ObjectId
+        DisplayName     = $_.DisplayName
+        UserPrincipalName = $_.UserPrincipalName
+        Mail            = $_.Mail
+        AccountEnabled  = if ($_.AccountEnabled) { "Enabled" } else { "Blocked" }
+        Licenses        = $licenses
     }
 }
 
-$userLicenses | Export-Csv -Path "$outputDirectory\Users.csv" -NoTypeInformation -Encoding UTF8
+$usersArray | Export-Csv -Path "$outputDirectory\Users.csv" -NoTypeInformation -Encoding UTF8
 Write-Host "Users exported to $outputDirectory\Users.csv."
 
 # Export Groups with all columns available
@@ -130,24 +130,6 @@ $domains = Get-AzureADDomain
 
 $domains | Export-Csv -Path "$outputDirectory\Domains.csv" -NoTypeInformation -Encoding UTF8
 Write-Host "Domains exported to $outputDirectory\Domains.csv."
-
-# Export Users with account status
-Write-Host
-Write-Host "Exporting users..."
-$users = Get-AzureADUser -All $true
-
-$usersArray = $users | ForEach-Object {
-    [PSCustomObject]@{
-        ObjectId        = $_.ObjectId
-        DisplayName     = $_.DisplayName
-        UserPrincipalName = $_.UserPrincipalName
-        Mail            = $_.Mail
-        AccountEnabled  = if ($_.AccountEnabled) { "Enabled" } else { "Blocked" }
-    }
-}
-
-$usersArray | Export-Csv -Path "$outputDirectory\Users.csv" -NoTypeInformation -Encoding UTF8
-Write-Host "Users exported to $outputDirectory\Users.csv."
 
 # Convert Teams and Groups data to arrays for easier comparison
 $teamsArray = $teams | ForEach-Object {
