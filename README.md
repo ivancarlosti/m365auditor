@@ -8,7 +8,7 @@ This script collects users, groups, Teams of a [Microsoft 365 Business]([https:/
 
 ## Instructions
 
-* Save .ps1, .txt files locally
+* Save .ps1, .txt files locally (download [here](https://github.com/ivancarlosti/m365auditor/zipball/master))
 * Change variables of `mainscript.ps1` if needed
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
 * Follow instructions selecting project name, option 1 to generate audit report and collect .zip file on `$destinationpath`
