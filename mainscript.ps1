@@ -1,7 +1,7 @@
 # Set console output encoding to UTF-8 for Latin characters
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-# Specify the output directory for working files, report and other variabled
+# Specify the output directory for working files, report and other variables
 $outputDirectory = (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
 $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 
@@ -104,9 +104,19 @@ Write-Host "Exporting Teams channels and memberships..."
 $teamsChannels = @()
 
 foreach ($team in $teams) {
+    # Check if GroupId is null or empty
+    if ([string]::IsNullOrEmpty($team.GroupId)) {
+        Write-Host "Skipping team '$($team.DisplayName)' because GroupId is null or empty."
+        continue  # Skip this iteration and move to the next team
+    }
+
+    # Get channels for the team
     $channels = Get-TeamChannel -GroupId $team.GroupId
+
     foreach ($channel in $channels) {
+        # Get channel members
         $channelMembers = Get-TeamChannelUser -GroupId $team.GroupId -DisplayName $channel.DisplayName
+
         foreach ($member in $channelMembers) {
             $teamsChannels += [PSCustomObject]@{
                 TeamName    = $team.DisplayName
@@ -145,7 +155,6 @@ $groupsArray = $groups | ForEach-Object {
         DisplayName     = $_.DisplayName
         MailEnabled     = $_.MailEnabled
         Mail            = $_.Mail
-        GroupTypes      = $_.GroupTypes -join ", "
         SecurityEnabled = $_.SecurityEnabled
         SharePointGroup = if ($teamsArray.GroupId -contains $_.ObjectId -or $aliases -match "SPO:") { "Yes" } else { "No" }
         Aliases         = $aliases
@@ -253,16 +262,36 @@ Write-Host "Calculating MD5 hash of the Excel file..."
 $md5Hash = Get-FileHash -Path $excelFilePath -Algorithm MD5 | Select-Object -ExpandProperty Hash
 Write-Host "MD5 hash of the Excel file: $md5Hash"
 
-# Archive the Excel file and the script itself in a zip file
-Write-Host "Archiving the Excel file and the script itself in a zip file..."
+# Wait to print info on screen for print screen
+Start-Sleep -Seconds 2
+
+# Print screen program
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+# Send alt + printscreen to capture the active window
+[System.Windows.Forms.SendKeys]::SendWait("%{PRTSC}")
+
+# Create a bitmap to store the screenshot
+$bitmap = New-Object System.Drawing.Bitmap([System.Windows.Forms.Clipboard]::GetImage())
+
+# Save the screenshot to the output directory
+$screenshotPath = "$outputDirectory\screenshot_$timestamp.png"
+$bitmap.Save($screenshotPath)
+
+Write-Host "Screenshot saved to $screenshotPath"
+
+# Archive the Excel file, the script itself, and the screenshot in a zip file
+Write-Host "Archiving the Excel file, the script itself, and the screenshot in a zip file..."
 $zipFilePath = "$outputDirectory\$selectedTenantId-report_$timestamp.zip"
 $scriptPath = $MyInvocation.MyCommand.Path
-Compress-Archive -Path $excelFilePath, $scriptPath -DestinationPath $zipFilePath
+Compress-Archive -Path $excelFilePath, $scriptPath, $screenshotPath -DestinationPath $zipFilePath
 Write-Host "Files archived to $zipFilePath"
 
-# Delete the Excel file
+# Delete the Excel file and the screenshot
 Remove-Item -Path $excelFilePath -Force
-Write-Host "Deleted $excelFilePath"
+Remove-Item -Path $screenshotPath -Force
+Write-Host "Deleted $excelFilePath and $screenshotPath"
 
 # Pause at the end
 pause
