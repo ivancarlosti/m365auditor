@@ -2,9 +2,11 @@
 This script collects users, groups and Teams of a Microsoft 365 environment on .xlsx file for audit and review purposes
 
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/m365auditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/m365auditor/stargazers)
+[![Watchers](https://img.shields.io/github/watchers/ivancarlosti/m365auditor?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
+[![Forks](https://img.shields.io/github/forks/ivancarlosti/m365auditor?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/m365auditor?label=Last%20Commit)](https://github.com/ivancarlosti/m365auditor/commits)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/m365auditor?label=Activity)](https://github.com/ivancarlosti/m365auditor/pulse)
-[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/m365auditor?label=Issues&color=orange)](https://github.com/ivancarlosti/m365auditor/issues)  
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/m365auditor?label=Activity)](https://github.com/ivancarlosti/m365auditor/pulse)  
+[![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/m365auditor?label=Issues&color=orange)](https://github.com/ivancarlosti/m365auditor/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/m365auditor?label=License)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/m365auditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/m365auditor/tree/main?tab=coc-ov-file)
