@@ -1,5 +1,5 @@
 # Microsoft 365 Auditor script
-This script collects users, groups, Teams of a [Microsoft 365 Business]([https://workspace.google.com/](https://www.microsoft.com/microsoft-365/business)) environment on .xlsx file for audit and review purposes, the file is archived in a .zip file including a screenshot with hash MD5 of the .xlsx file and the script executed.
+This script collects users, groups and Teams of a Microsoft 365 environment on .xlsx file for audit and review purposes.
 
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/m365auditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/m365auditor/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/m365auditor?label=Last%20Commit)](https://github.com/ivancarlosti/m365auditor/commits)
