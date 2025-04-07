@@ -1,4 +1,4 @@
-Por favor, valide o documento Excel (.xlsx) no arquivo ZIP anexado e compartilhe sua aprovação. Quaisquer ajustes necessários devem ser respondidos neste e-mail, e após os ajustes, um novo documento será gerado para validação e aprovação.
+Por favor, valide o documento Excel (.xlsx) e compartilhe sua aprovação. Quaisquer ajustes necessários devem ser respondidos neste e-mail, e após os ajustes, um novo documento será gerado para validação e aprovação.
 
 ### Como validar usuários, grupos e acesso no ambiente tecnológico da organização:
 
