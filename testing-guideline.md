@@ -1,4 +1,4 @@
-Please validate the Excel (.xlsx) document in the attached ZIP file and share your approval. Any necessary adjustments should be responded to in this email, and after the adjustments, a new document will be generated for validation and approval.
+Please validate the Excel (.xlsx) document attached and share your approval. Any necessary adjustments should be responded to in this email, and after the adjustments, a new document will be generated for validation and approval.
 
 ### How to validate users, groups, and access in the organization's technology environment:
 
