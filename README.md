@@ -16,6 +16,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 * Change variables of `mainscript.ps1` if needed
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
 * Follow instructions selecting project name, option 1 to generate audit report and collect .zip file on `$destinationpath`
+* If needs help to install or update required modules, run `ADMIN-install-modules.ps1` as administrator
 
 ## Requirements
 * Windows 10+ or Windows Server 2019+
