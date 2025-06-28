@@ -14,6 +14,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 ## Instructions
 * Save .ps1, .txt files locally (download [here](https://github.com/ivancarlosti/m365auditor/zipball/master))
 * Change variables of `mainscript.ps1` if needed
+* Update `tenantIds.txt` with your tenants
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
 * Follow instructions selecting tenant, authenticate, collect .zip file on `$destinationpath`
 * If needs help to install or update required modules, run `ADMIN-install-modules.ps1` as administrator
