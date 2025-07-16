@@ -12,7 +12,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/m365auditor/tree/main?tab=coc-ov-file)
 
 ## Instructions
-* Save .ps1, .txt files locally (download [here](https://github.com/ivancarlosti/m365auditor/zipball/master))
+* Save the last release version and extract files locally (download [here](https://github.com/ivancarlosti/m365auditor/releases/latest))
 * Change variables of `mainscript.ps1` if needed
 * Update `tenantIds.txt` with your tenants
 * Run `mainscript.ps1` on PowerShell (right-click on file > Run with PowerShell)
