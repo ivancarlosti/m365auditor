@@ -2,12 +2,12 @@ ToDo:
 
 Limitations:
 
-* Microsoft Graph module is unable to list members private SharePoints, so AzureAD module persists, could be moved to SharePoint Online (SPO) module.
-* Microsoft Graph module is unable to list members of private Teams, so Module Teams module persists.
-* Microsoft Graph module is unable to properly list Shared Mailboxes, so ExchangeOnline module persists.
-* DLMemberships TAB do not list Owners, need to improve script
 * ADMIN-install-modules.ps1 can warn `'PackageManagement' is currently in use`, it's safe to ignore this warning.
 * Find a way to list last user login and activity, last signin call using Microsoft Graph requires AD Premium license.
-* AzureAD module is being deprecated but used for several calls, need to look for alternatives.
 * Microsoft Graph API workaround Microsoft Graph module limitations but requires app registration.
 * Pending to validate Shared channels on Teams if they will add note related to unable to catch users
+* Improve Shared Mailbox with members
+* Create delegated mailbox TAB
+* Improve DLs merging members and owners using ExchangeOnline module, owners list have issue reporting System.Object[]
+* List aliases of all mail accounts (users, dls, sharepoint)
+* List 2FA settings of Microsoft 365 (portal admins + enforced rule + AzureAD)
