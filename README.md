@@ -22,7 +22,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 ## Requirements
 * Windows 10+ or Windows Server 2019+
 * PowerShell 5.x (some modules still runs under .NET Framework, PowerShell 7.x uses .NET Core)
-* Modules `MicrosoftTeams`, `ImportExcel`, `Microsoft.Graph`, `ImportExcel` on PowerShell (check `ADMIN-install-modules.ps1` for help to install or update modules)
+* Modules `MicrosoftTeams`, `ImportExcel`, `Microsoft.Graph`, `ImportExcel` on PowerShell
 
 ---
 
