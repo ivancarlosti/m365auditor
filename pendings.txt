@@ -1,7 +1,5 @@
 ToDo:
 
-Limitations:
-
 * ADMIN-install-modules.ps1 can warn `'PackageManagement' is currently in use`, it's safe to ignore this warning.
 * Find a way to list last user login and activity, last signin call using Microsoft Graph requires AD Premium license.
 * Microsoft Graph API workaround Microsoft Graph module limitations but requires app registration.
