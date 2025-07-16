@@ -1,4 +1,4 @@
-﻿
+
 # Check for administrator privileges
 $currentIdentity = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = New-Object Security.Principal.WindowsPrincipal($currentIdentity)
@@ -19,7 +19,6 @@ try {
 
 # List of required modules
 $modules = @(
-    'AzureAD',
     'MicrosoftTeams',
     'ImportExcel',
     'Microsoft.Graph',
