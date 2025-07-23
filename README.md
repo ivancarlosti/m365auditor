@@ -1,6 +1,7 @@
 # Microsoft 365 Auditor script
 This script collects users, groups and Teams of a Microsoft 365 environment on .xlsx file for audit and review purposes
 
+<!-- buttons -->
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/m365auditor?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/m365auditor/stargazers)
 [![Watchers](https://img.shields.io/github/watchers/ivancarlosti/m365auditor?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
 [![Forks](https://img.shields.io/github/forks/ivancarlosti/m365auditor?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
@@ -10,6 +11,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 [![License](https://img.shields.io/github/license/ivancarlosti/m365auditor?label=License)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/m365auditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/m365auditor/tree/main?tab=coc-ov-file)
+<!-- endbuttons -->
 
 ## Instructions
 * Save the last release version and extract files locally (download [here](https://github.com/ivancarlosti/m365auditor/releases/latest))
@@ -24,6 +26,7 @@ This script collects users, groups and Teams of a Microsoft 365 environment on .
 * PowerShell 5.x (some modules still runs under .NET Framework, PowerShell 7.x uses .NET Core)
 * Modules `MicrosoftTeams`, `ImportExcel`, `Microsoft.Graph`, `ImportExcel` on PowerShell
 
+<!-- footer -->
 ---
 
 ## 🧑‍💻 Consulting and technical support
