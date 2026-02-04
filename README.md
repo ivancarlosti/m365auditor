@@ -1,6 +1,10 @@
 # Microsoft 365 Auditor script
 This script collects users, groups and Teams of a Microsoft 365 environment on .xlsx file for audit and review purposes
 
+<!-- buttons -->
+
+<!-- endbuttons -->
+
 ## Instructions
 * Save the last release version and extract files locally (download [here](https://github.com/ivancarlosti/m365auditor/releases/latest))
 * Change variables of `mainscript.ps1` if needed
